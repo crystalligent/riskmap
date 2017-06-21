@@ -1,0 +1,31 @@
+#mainmap{width:100%;height:100%;}
+
+#pageloadingbounce{
+    background-attachment: local;
+    background-clip: border-box;
+    background-color: rgba(9, 9, 20, 0.85);
+    border: 1px solid;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    width: 56%;
+    z-index: 99999;}
+.sk-spinner-three-bounce.sk-spinner {
+    margin: 45% auto;}
+.info-box-menu{background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #ffffd0;
+    font-size: 11px;
+    left: 0px;
+    line-height: 18px;
+    position: absolute;
+    width: 320px;
+    height: 80%;
+    top:40px;        
+    padding:11px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    z-index:9999;
+}
+
+.evacuation-image-marker{background-image:url("/common/images/house-24.png");-moz-background-size:100% 100%;-webkit-background-size:100% 100%;background-size:100% 100%; width:30px !important;height:30px !important;border:solid 2px #fff;border-radius:25px;}

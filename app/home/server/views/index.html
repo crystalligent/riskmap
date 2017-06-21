@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Risk Map</title>
+  <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/bower_components/jquery-ui/themes/smoothness/jquery-ui.css"/>
+  <link rel="stylesheet" href="/common/css/style.css"/>
+
+  <link rel="stylesheet" href="/common/css/animate.css"/>
+    <!-- Mainly scripts -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/bower_components/Chart.js/Chart.js"></script>
+    <link rel="stylesheet" href="/common/plugins/leaflet/leaflet.css">
+    <!--<script type="text/javascript" src="/common/plugins/leaflet/leaflet.js"></script> -->
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script type="text/javascript" src="/bower_components/leaflet-draw/dist/leaflet.draw.js"></script>
+
+    <link rel="stylesheet" href="/bower_components/leaflet-draw/dist/leaflet.draw.css">
+    <!-- jQuery UI -->
+    <script type="text/javascript" src="/bower_components/jquery-ui/jquery-ui.js"></script>
+
+
+  <!-- Angular -->
+  <script src="/bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="/bower_components/angular-resource/angular-resource.min.js"></script>
+  <script type="text/javascript" src="/bower_components/angular-ui-map/ui-map.min.js?3l0qlcgzaor"></script>
+  <script type="text/javascript" src="/bower_components/angular-ui-utils/ui-utils.min.js?3l0qlcgzaor"></script>
+  <script type="text/javascript" src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+<!--
+  <script src="/bower_components/proj4/dist/proj4.js"></script>
+-->
+<!---->
+ <script src="/common/plugins/proj4/dist/proj4.js"></script> 
+ <script src="/common/plugins/proj4leaflet/src/proj4leaflet.js"></script>
+
+  <!--<script type="text/javascript" src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script> -->
+  <script type="text/javascript" src="/bower_components/angular-chart.js/dist/angular-chart.js"></script>
+  
+  <!--marker cluster -->
+  <script src="/common/plugins/markercluster/leaflet.markercluster-src.js"></script>
+  <link rel="stylesheet" href="/common/plugins/markercluster/leaflet.markercluster-default.css">
+  <link rel="stylesheet" href="/common/plugins/markercluster/leaflet.markercluster.css">
+
+  <script src="/common/js/relief.maps.jquery.js"></script>
+
+
+  <link href="/home/assets/css/home.css" rel="stylesheet">
+  <link href="/common/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+  <!-- Toastr -->
+      <script type="text/javascript" src="/common/js/plugins/toastr/toastr.min.js"></script>
+      <script type="text/javascript">
+      toastr.options = {
+          'closeButton': true,
+          'progressBar': true,
+          'timeOut': '0',
+          'extendedTimeOut': '500',
+          'showEasing': 'swing',
+          'hideEasing': 'linear',
+          'showMethod': 'fadeIn',
+          'hideMethod': 'fadeOut',
+          'timeOut' : '5000'
+      };
+      </script>
+
+      <!-- Leaflet draw-->
+      
+	<script src="/common/js/plugins/leaflet.draw/Toolbar.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/Tooltip.js"></script>
+
+	<script src="/common/js/plugins/leaflet.draw/ext/GeometryUtil.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/ext/LatLngUtil.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/ext/LineUtil.Intersect.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/ext/Polygon.Intersect.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/ext/Polyline.Intersect.js"></script>
+
+
+	<script src="/common/js/plugins/leaflet.draw/draw/DrawToolbar.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/draw/handler/Draw.Feature.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/draw/handler/Draw.SimpleShape.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/draw/handler/Draw.Polyline.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/draw/handler/Draw.Circle.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/draw/handler/Draw.Marker.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/draw/handler/Draw.Polygon.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/draw/handler/Draw.Rectangle.js"></script>
+
+
+	<script src="/common/js/plugins/leaflet.draw/edit/EditToolbar.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/edit/handler/EditToolbar.Edit.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/edit/handler/EditToolbar.Delete.js"></script>
+
+	<script src="/common/js/plugins/leaflet.draw/Control.Draw.js"></script>
+
+	<script src="/common/js/plugins/leaflet.draw/edit/handler/Edit.Poly.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/edit/handler/Edit.SimpleShape.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/edit/handler/Edit.Circle.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/edit/handler/Edit.Rectangle.js"></script>
+	<script src="/common/js/plugins/leaflet.draw/edit/handler/Edit.Marker.js"></script>
+
+  <script src="/common/js/plugins/geodesy/dms.js"></script>
+	<script src="/common/js/plugins/geodesy/latlon-spherical.js"></script>
+
+  <script src="/common/plugins/leaflet-velocity/leaflet-velocity.js"></script>
+  <link rel="stylesheet" href="/common/plugins/leaflet-velocity/leaflet-velocity.css">
+
+  <script>
+    var RISK = angular.module('RISK', ['ui.bootstrap','chart.js']);  
+  </script>
+
+ 
+
+<script src="/common/utils/utils.js"></script>
+<script src="/common/controllers/dialog.js"></script>
+<script src="/common/service/dialog.js"></script>
+<script  src="/home/controllers/riskmain.js"></script>
+</head>
+<body class="gray-bg" ng-app="RISK" ng-controller="RISKMAPController" ng-init="init()">
+<div id="mainmap"></div>
+<div class="info-box-menu"> 
+  <table class="table table-bordered">
+      <tr>
+        <td>Name</td><td>{{currentEvacuation.details.name}}</td> 
+       </tr>
+      <tr>
+        <td>Address</td><td>{{currentEvacuation.details.address}}</td> 
+       </tr>
+      <tr>
+        <td>Evacuation Type</td><td>{{currentEvacuation.details.evacuation_type}}</td> 
+      </tr>  
+      <tr>
+        <td>Manager</td><td>{{currentEvacuation.details.manager}}</td> 
+      </tr>
+      <tr>
+        <td colspan="2"></td> 
+      </tr> 
+      <tr>
+        <td>Elevation</td><td>{{tom(currentEvacuation.elevation.elevation)}}</td> 
+      </tr> 
+      <tr>
+        <td>Resolution</td><td>{{currentEvacuation.elevation.resolution}}</td> 
+      </tr> 
+      <tr>
+        <td colspan="2"></td> 
+      </tr> 
+      <tr>
+        <td>Distance from Nearest Faultline</td><td>{{ tokm(currentEvacuation.faultline.distance)}}</td> 
+      </tr>
+      <tr>
+        <td>Fault Name</td><td>{{currentEvacuation.faultline.the_fault_name}}</td> 
+      </tr>  
+      <tr>
+        <td>Fault Segment</td><td>{{currentEvacuation.faultline.the_seg_name}}</td> 
+      </tr>
+      <tr>
+        <td>Scale</td><td>{{currentEvacuation.faultline.scale}}</td> 
+      </tr>  
+   </table> 
+</div> 
+</div>
+</body>
+</html>
